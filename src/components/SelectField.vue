@@ -1,17 +1,24 @@
 <template>
-  <select :value="modelValue" @change="handleChange">
-    <option disabled value="">Выберите страну</option>
+  <div>
+    <select :value="modelValue" @change="handleChange">
+      <option disabled value="">Выберите страну</option>
 
-    <option v-for="option in obj.options" :key="option" :value="option">
-      {{ option }}
-    </option>
-  </select>
+      <option v-for="option in obj.options" :key="option" :value="option">
+        {{ option }}
+      </option>
+    </select>
+
+    <p v-if="error">
+      {{ error }}
+    </p>
+  </div>
 </template>
 
 <script setup>
 const props = defineProps({
   obj: Object,
   modelValue: String,
+  error: String,
 });
 
 const emit = defineEmits(["update:modelValue"]);

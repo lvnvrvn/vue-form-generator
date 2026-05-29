@@ -1,9 +1,26 @@
 <template>
-  <component :is="componentMap[obj.type]" :obj="obj" v-model="model" />
+  <BaseInput
+    v-if="
+      obj.type === 'text' || obj.type === 'email' || obj.type === 'password'
+    "
+    :obj="obj"
+    :error="error"
+    v-model="model"
+  />
 
-  <p v-if="error">
-    {{ error }}
-  </p>
+  <SelectField
+    v-else-if="obj.type === 'select'"
+    :obj="obj"
+    :error="error"
+    v-model="model"
+  />
+
+  <CheckboxField
+    v-else-if="obj.type === 'checkbox'"
+    :obj="obj"
+    :error="error"
+    v-model="model"
+  />
 </template>
 
 <script setup>
