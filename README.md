@@ -5,6 +5,7 @@
 ## Demo
 
 Live demo:
+https://vue-form-generator-sigma.vercel.app/
 
 ## Возможности
 
