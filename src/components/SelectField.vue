@@ -4,7 +4,11 @@
       {{ obj.label }}
     </label>
 
-    <select :value="modelValue" @change="handleChange">
+    <select
+      :value="modelValue"
+      :class="{ 'error-input': error }"
+      @change="handleChange"
+    >
       <option disabled value="">Выберите страну</option>
 
       <option v-for="option in obj.options" :key="option" :value="option">

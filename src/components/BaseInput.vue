@@ -8,6 +8,7 @@
       v-if="obj.type === 'textarea'"
       :placeholder="obj.placeholder"
       :value="modelValue"
+      :class="{ 'error-input': error }"
       @input="handleInput"
     />
 
@@ -16,6 +17,7 @@
       :type="obj.type"
       :placeholder="obj.placeholder"
       :value="modelValue"
+      :class="{ 'error-input': error }"
       @input="handleInput"
     />
 
