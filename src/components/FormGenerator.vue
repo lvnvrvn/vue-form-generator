@@ -3,8 +3,9 @@
     <div v-for="obj in props.schema" :key="obj.id">
       <FormField
         :obj="obj"
-        v-model="model[obj.model]"
         :error="errors[obj.model]"
+        v-model="model[obj.model]"
+        @validate="validateField(obj)"
       />
     </div>
 

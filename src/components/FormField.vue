@@ -39,7 +39,7 @@ const props = defineProps({
   error: String,
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue", "validate"]);
 
 const componentMap = {
   text: BaseInput,
@@ -56,6 +56,8 @@ const model = computed({
 
   set(value) {
     emit("update:modelValue", value);
+
+    emit("validate");
   },
 });
 </script>
