@@ -1,13 +1,21 @@
 <template>
   <div class="field">
+    <textarea
+      v-if="obj.type === 'textarea'"
+      :placeholder="obj.placeholder"
+      :value="modelValue"
+      @input="handleInput"
+    />
+
     <input
+      v-else
       :type="obj.type"
       :placeholder="obj.placeholder"
       :value="modelValue"
       @input="handleInput"
     />
 
-    <p v-if="error">
+    <p v-if="error" class="error">
       {{ error }}
     </p>
   </div>

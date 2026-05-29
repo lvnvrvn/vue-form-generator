@@ -6,7 +6,7 @@
       Принять условия
     </label>
 
-    <p v-if="error">
+    <p v-if="error" class="error">
       {{ error }}
     </p>
   </div>

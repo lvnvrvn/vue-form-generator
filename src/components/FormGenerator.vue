@@ -8,12 +8,14 @@
       />
     </div>
 
-    <button>Отправить</button>
+    <button :disabled="!isFormValid">Отправить</button>
+
+    <p v-if="submitted" class="success">Форма успешно отправлена!</p>
   </form>
 </template>
 
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive, computed, ref } from "vue";
 import FormField from "./FormField.vue";
 
 const props = defineProps({
@@ -81,8 +83,23 @@ function handleSubmit() {
     return;
   }
 
+  if (Object.keys(errors).length === 0) {
+    submitted.value = true;
+  }
+
   console.log(model);
 
-  alert("Форма отправлена");
+  //   alert("Форма отправлена");
+  Object.keys(model.value).forEach((key) => {
+    if (typeof model.value[key] === "boolean") {
+      model.value[key] = false;
+    } else {
+      model.value[key] = "";
+    }
+  });
+  errors = reactive({});
 }
+
+const isFormValid = computed(() => Object.keys(errors).length === 0);
+const submitted = ref(false);
 </script>

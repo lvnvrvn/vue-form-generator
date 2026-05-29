@@ -47,6 +47,15 @@ const formSchema = [
     model: "terms",
     rules: ["required"],
   },
+
+  {
+    id: 5,
+    type: "textarea",
+    placeholder: "Расскажите о себе",
+    model: "about",
+
+    rules: ["required", "min:10"],
+  },
 ];
 
 // const formData = reactive({
@@ -63,5 +72,6 @@ const formData = ref({
   password: "",
   country: "",
   terms: false,
+  about: "",
 });
 </script>

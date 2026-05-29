@@ -1,7 +1,10 @@
 <template>
   <BaseInput
     v-if="
-      obj.type === 'text' || obj.type === 'email' || obj.type === 'password'
+      obj.type === 'text' ||
+      obj.type === 'email' ||
+      obj.type === 'password' ||
+      obj.type === 'textarea'
     "
     :obj="obj"
     :error="error"
