@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <label>
+  <div class="field">
+    <label class="checkbox">
       <input type="checkbox" :checked="modelValue" @change="handleChange" />
 
       Принять условия

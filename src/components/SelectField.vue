@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="field">
     <select :value="modelValue" @change="handleChange">
       <option disabled value="">Выберите страну</option>
 

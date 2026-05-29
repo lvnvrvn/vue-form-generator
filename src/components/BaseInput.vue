@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="field">
     <input
       :type="obj.type"
       :placeholder="obj.placeholder"
