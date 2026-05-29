@@ -55,7 +55,7 @@ function validateField(obj) {
       const min = Number(rule.split(":")[1]);
 
       if (String(value).length < min) {
-        errors[obj.model] = `Минимум ${min} символа`;
+        errors[obj.model] = `Минимум ${min} ${getSymbolWord(min)}`;
         return;
       }
     }
@@ -73,9 +73,19 @@ function validateField(obj) {
   }
 }
 
-function handleSubmit() {
-  console.log(errors);
+function getSymbolWord(count) {
+  if (count === 1) {
+    return "символ";
+  }
 
+  if (count >= 2 && count <= 4) {
+    return "символа";
+  }
+
+  return "символов";
+}
+
+function handleSubmit() {
   props.schema.forEach((obj) => {
     validateField(obj);
   });
@@ -88,9 +98,6 @@ function handleSubmit() {
     submitted.value = true;
   }
 
-  console.log(model);
-
-  //   alert("Форма отправлена");
   Object.keys(model.value).forEach((key) => {
     if (typeof model.value[key] === "boolean") {
       model.value[key] = false;
