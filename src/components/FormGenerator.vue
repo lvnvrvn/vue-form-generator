@@ -105,7 +105,10 @@ function handleSubmit() {
       model.value[key] = "";
     }
   });
-  errors = reactive({});
+
+  Object.keys(errors).forEach((key) => {
+    delete errors[key];
+  });
 }
 
 const isFormValid = computed(() => Object.keys(errors).length === 0);
