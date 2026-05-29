@@ -10,6 +10,7 @@ const formSchema = [
   {
     id: 0,
     type: "text",
+    label: "Имя",
     placeholder: "Введите имя",
     model: "name",
     rules: ["required", "min:3"],
@@ -18,6 +19,7 @@ const formSchema = [
   {
     id: 1,
     type: "email",
+    label: "Email",
     placeholder: "Введите email",
     model: "email",
 
@@ -27,6 +29,7 @@ const formSchema = [
   {
     id: 2,
     type: "password",
+    label: "Пароль",
     placeholder: "Введите пароль",
     model: "password",
     rules: ["required", "min:6"],
@@ -35,6 +38,7 @@ const formSchema = [
   {
     id: 3,
     type: "select",
+    label: "Страна",
     model: "country",
     rules: ["required"],
 
@@ -44,6 +48,7 @@ const formSchema = [
   {
     id: 4,
     type: "checkbox",
+    label: "Согласие с условиями",
     model: "terms",
     rules: ["required"],
   },
@@ -51,20 +56,13 @@ const formSchema = [
   {
     id: 5,
     type: "textarea",
+    label: "О себе",
     placeholder: "Расскажите о себе",
     model: "about",
 
     rules: ["required", "min:10"],
   },
 ];
-
-// const formData = reactive({
-//   name: "",
-//   email: "",
-//   password: "",
-//   country: "",
-//   terms: false,
-// });
 
 const formData = ref({
   name: "",

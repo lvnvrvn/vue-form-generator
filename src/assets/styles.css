@@ -20,6 +20,12 @@ form {
   flex-direction: column;
 }
 
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
 input,
 select {
   padding: 12px;

@@ -1,5 +1,9 @@
 <template>
   <div class="field">
+    <label>
+      {{ obj.label }}
+    </label>
+
     <label class="checkbox">
       <input type="checkbox" :checked="modelValue" @change="handleChange" />
 

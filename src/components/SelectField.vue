@@ -1,5 +1,9 @@
 <template>
   <div class="field">
+    <label>
+      {{ obj.label }}
+    </label>
+
     <select :value="modelValue" @change="handleChange">
       <option disabled value="">Выберите страну</option>
 

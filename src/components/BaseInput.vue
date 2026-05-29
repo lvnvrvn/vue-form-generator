@@ -1,5 +1,9 @@
 <template>
   <div class="field">
+    <label>
+      {{ obj.label }}
+    </label>
+
     <textarea
       v-if="obj.type === 'textarea'"
       :placeholder="obj.placeholder"
